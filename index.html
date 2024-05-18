@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full">
+  <div class="navbar bg-base-100 relative">
+    <div class="flex-1">
+      <label class="swap">
+        <input type="checkbox" />
+        <div class="swap-off btn btn-ghost text-xl justify-start">Lagso</div>
+        <div class="swap-on btn btn-ghost text-l">Learning and Growing Synthetic Organisms</div>
+      </label>
+    </div>
+    <div class="absolute">
+      <button id="t_selector" class="btn m-2" onclick="selectBrush(`t`)">⬜</button>
+      <button id="f_selector" class="btn m-2" onclick="selectBrush(`f`)">🍎</button>
+      <button id="c_selector" class="btn m-2 selected" onclick="selectBrush(`c`)">⬆️</button>
+    </div>
+    <div class="flex-none">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <details>
+            <summary>
+              Creators
+            </summary>
+            <ul class="p-2 bg-base-100 rounded-t-none">
+              <li><a href="https://www.williamqm.com/">WilliamQM</a></li>
+              <li><a href="https://TBD.com/">Max A.</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <main class="pt-0 p-16 h-full flex flex-col justify-center items-center">
+    <div class="mb-5 flex width-full">
+      <div id="grid" class="ml-auto mr-auto"><div class="grid_row"><button onclick="placeSelection(0, 0)" class="btn">⬜</button><button onclick="placeSelection(0, 1)" class="btn">⬜</button><button onclick="placeSelection(0, 2)" class="btn">⬜</button><button onclick="placeSelection(0, 3)" class="btn">⬜</button><button onclick="placeSelection(0, 4)" class="btn">⬜</button></div><div class="grid_row"><button onclick="placeSelection(1, 0)" class="btn">⬜ </button><button onclick="placeSelection(1, 1)" class="btn">⬜ </button><button onclick="placeSelection(1, 2)" class="btn">⬜ </button><button onclick="placeSelection(1, 3)" class="btn">⬜ </button><button onclick="placeSelection(1, 4)" class="btn">⬜ </button></div><div class="grid_row"><button onclick="placeSelection(2, 0)" class="btn">⬜</button><button onclick="placeSelection(2, 1)" class="btn">⬜ </button><button onclick="placeSelection(2, 2)" class="btn">⬜ </button><button onclick="placeSelection(2, 3)" class="btn">⬜ </button><button onclick="placeSelection(2, 4)" class="btn">⬜</button></div><div class="grid_row"><button onclick="placeSelection(3, 0)" class="btn">⬜</button><button onclick="placeSelection(3, 1)" class="btn">⬜ </button><button onclick="placeSelection(3, 2)" class="btn">⬜ </button><button onclick="placeSelection(3, 3)" class="btn">⬜ </button><button onclick="placeSelection(3, 4)" class="btn">⬜</button></div><div class="grid_row"><button onclick="placeSelection(4, 0)" class="btn">⬜ </button><button onclick="placeSelection(4, 1)" class="btn">⬜</button><button onclick="placeSelection(4, 2)" class="btn">⬜</button><button onclick="placeSelection(4, 3)" class="btn">⬜ </button><button onclick="placeSelection(4, 4)" class="btn">⬜</button></div></div>
+      <div id="petri_stats">
+        <table class="table max-h-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th></th>
+              <th>AI</th>
+              <th>Population</th>
+            </tr>
+          </thead>
+          <tbody id="ai_leaderboard">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="input-container flex justify-center items-center">
+      <button class="btn btn-circle" onclick="advanced_settings.showModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+        </svg>
+      </button>
+      <label class="input input-bordered flex items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 opacity-70">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+        </svg>
+        Dimensions
+        <input id="dimensions" type="text" class="grow" placeholder="5x5" />
+      </label>
+      <button id="run_button" class="text-white btn btn-active btn-success" onclick="runSimulator()">Run</button>
+      <button id="fast_forward" class="text-white btn btn-active btn-square btn-primary" onclick="fastForward()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811V8.69ZM12.75 8.689c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061a1.125 1.125 0 0 1-1.683-.977V8.69Z" />
+        </svg>
+      </button>
+    </div>
+  </main>
+  <dialog id="advanced_settings" class="modal">
+    <div id="alert" role="alert" class="alert hidden">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      <span id="alert_text"></span>
+    </div>
+    <div id="settings_container" class="modal-box">
+      
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+  <script src="script.js"></script>
+  <script src="htmlInteraction.js"></script>
+</body>
+
+</html>
+
+<!-- TODO list
+
+Allow for control of possible ai commands through a table (m, r, l, s, f) include disable/enable and energy cost
+Make it so you can set energy costs of moves, repdouction, and other creature variables -->

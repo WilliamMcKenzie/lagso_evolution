@@ -1,0 +1,71 @@
+html {
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.alert {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  max-width: 50vw !important;
+  z-index: 1000 !important;
+  transition: 0.3s;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.absolute {
+  left: 50%;
+  transform: translate(-50%, 0)
+}
+
+.selected {
+  background: #e0e8ff !important;
+}
+
+.grid_row {
+  margin: 1rem;
+  white-space: nowrap;
+}
+.grid_row button {
+  margin: 0.5rem;
+  margin-top: 0;
+  
+  font-size: 3vh;
+  width: 6vh;
+  height: 6vh;
+}
+
+.input-container label {
+  margin: 0.5rem;
+}
+.input-container button {
+  margin: 0.5rem;
+}
+
+.modal-box label {
+  margin: 1rem;
+}
+
+::-webkit-scrollbar {
+  width: 0em;
+  height: 0em;
+}
+::-webkit-scrollbar-button {
+  background: transparent
+}
+::-webkit-scrollbar-track-piece {
+  background: transparent
+}
+::-webkit-scrollbar-thumb {
+  background: #F2F2F2;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 2;
+  border-radius: 10px;
+}
