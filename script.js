@@ -87,7 +87,7 @@ class Tile {
   }
 }
 Tile.prototype.toString = function tileToString() {
-  return `⬜`;
+  return `tile`;
 };
 
 // Food
@@ -98,7 +98,7 @@ class Food {
   }
 }
 Food.prototype.toString = function foodToString() {
-  return `🍎`;
+  return `food`;
 };
 
 // Creature
@@ -244,7 +244,7 @@ class Creature {
 }
 
 Creature.prototype.toString = function creatureToString() {
-  return creature_icons[this.orientation]
+  return this.orientation
 };
 
 // Petri
@@ -386,7 +386,7 @@ function renderPetri(petriRef){
   for(var y = 0; y < petriRef.y_width; y++){
     var gridRow = `<div class="grid_row">`
     for(var x = 0; x < petriRef.x_width; x++){
-      gridRow += `<button onclick="placeSelection(${y}, ${x})" class="btn">${petriRef.grid[y][x].toString()}</button>`
+      gridRow += `<button onclick="placeSelection(${y}, ${x})" class="btn"><img src="images/${petriRef.grid[y][x].toString()}.png"></button>`
     }
     gridRow += `</div>`
     grid.innerHTML += gridRow

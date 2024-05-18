@@ -6,6 +6,11 @@ html {
   position: relative;
 }
 
+img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 .alert {
   position: absolute;
   right: 1rem;
