@@ -9,6 +9,7 @@ html {
 img {
   width: 1.5rem;
   height: 1.5rem;
+  max-width: none !important;
 }
 
 .alert {
