@@ -21,6 +21,23 @@ img {
   transition: 0.3s;
 }
 
+.selector-btn {
+  position: relative;
+  overflow: hidden !important;
+}
+.selector-btn p {
+  width: 200%;
+  height: 200%;
+  opacity: 0.2;
+  position: absolute;
+}
+.selector-btn img {
+  z-index: 100;
+}
+.selected p {
+  background: #00A6ED;
+}
+
 .hidden {
   opacity: 0;
 }
@@ -28,10 +45,6 @@ img {
 .absolute {
   left: 50%;
   transform: translate(-50%, 0)
-}
-
-.selected {
-  background: #e0e8ff !important;
 }
 
 .grid_row {

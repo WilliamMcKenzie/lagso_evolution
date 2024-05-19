@@ -281,6 +281,7 @@ class Petri {
   }
 
   petriStep(){
+    console.log(food_density)
     for(var y = 0; y < this.y_width; y++){
       for(var x = 0; x < this.x_width; x++){
         if(this.grid[y][x] instanceof Creature){
@@ -370,15 +371,6 @@ Petri.prototype.toString = function petriToString() {
 
 var petri = new Petri(5, 5, 0)
 
-function isNumeric(n){
-  if(isNaN(n)) return false
-  if(n.replaceAll(" ") == "") return false
-  return true
-}
-function testValidity(val, alt){
-  return isNumeric(val) ? parseInt(val) : alt
-}
-
 function renderPetri(petriRef){
   var grid = document.getElementById("grid")
   grid.innerHTML = ``
@@ -429,6 +421,15 @@ for(input of inputList){
   input.onchange = function(){
     updatePetriInfo()
   }
+}
+
+function isNumeric(n){
+  if(isNaN(n)) return false
+  if(n.replaceAll(" ") == "") return false
+  return true
+}
+function testValidity(val, alt){
+  return isNumeric(val) ? parseFloat(val) : alt
 }
 
 function updatePetriInfo(){

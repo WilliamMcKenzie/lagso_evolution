@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="cupcake">
 
 <head>
   <meta charset="utf-8">
@@ -21,9 +21,15 @@
       </label>
     </div>
     <div class="absolute">
-      <button id="t_selector" class="btn m-2" onclick="selectBrush(`t`)"><img src="images/tile.png"></button>
-      <button id="f_selector" class="btn m-2" onclick="selectBrush(`f`)"><img src="images/food.png"></button>
-      <button id="c_selector" class="btn m-2 selected" onclick="selectBrush(`c`)"><img src="images/N.png"></button>
+      <button id="t_selector" class="selector-btn btn m-2" onclick="selectBrush(`t`)"><img src="images/tile.png"><p/></p></button>
+      <button id="f_selector" class="selector-btn btn m-2" onclick="selectBrush(`f`)"><img src="images/food.png"><p/></p></button>
+      <button id="c_selector" class="selector-btn btn m-2 selected" onclick="selectBrush(`c`)"><img src="images/N.png"><p/></p></button>
+    </div>
+    <div>
+      <img src="images/N.png">
+      <img src="images/S.png">
+      <img src="images/W.png">
+      <img src="images/E.png">
     </div>
     <div class="flex-none">
       <ul class="menu menu-horizontal px-1">
