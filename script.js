@@ -533,7 +533,7 @@ function fastForward(){
   else if(buttonEle.classList.contains("btn-secondary")){
     buttonEle.classList.add("btn-accent")
     buttonEle.classList.remove("btn-secondary")
-    petriSpeed = 1000
+    petriSpeed = 100000
   }
 }
 
