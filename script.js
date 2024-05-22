@@ -523,17 +523,17 @@ function fastForward(){
   if(buttonEle.classList.contains("btn-accent")){
     buttonEle.classList.add("btn-primary")
     buttonEle.classList.remove("btn-accent")
-    petriSpeed = 1
+    petriSpeed = 2
   }
   else if(buttonEle.classList.contains("btn-primary")){
     buttonEle.classList.add("btn-secondary")
     buttonEle.classList.remove("btn-primary")
-    petriSpeed = 2
+    petriSpeed = 4
   }
   else if(buttonEle.classList.contains("btn-secondary")){
     buttonEle.classList.add("btn-accent")
     buttonEle.classList.remove("btn-secondary")
-    petriSpeed = 4
+    petriSpeed = 1000
   }
 }
 
