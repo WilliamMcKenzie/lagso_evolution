@@ -6,6 +6,8 @@ Once you open the website, you are greeted with a blank canvas. If you press run
 
 They can do 4 things, move forwards in whichever direction they are facing, turn left/right, and stop (m, l, r, s). Initially they can have a "AI String" which is 3 characters long and loops infinitely, going through 1 character each game tick. This dictates their behaviour, for example the ai string "mls" would make a creature that coninously goes forwards, turns left, then sleeps for a turn. Each move consumes energy which can be decided in the settings.
 
+Creatures can reproduce when they have a set energy (defaults to 100), which has a chance of slightly mutating them, and when they die they drop a 50 energy food.
+
 # Utility Tools
 Top Bar: You can place down whichever object is selected onto the canvas by clicking the square you want to place it on. You can place terrain, food, or creatures.
 
