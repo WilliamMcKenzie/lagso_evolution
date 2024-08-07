@@ -23,3 +23,4 @@ While making this we were inspired by The Life Engine [https://thelifeengine.net
 We didn't know it was a thing/had a name, but it turns out what we created is called the genetic algorithm, and we just stumbled upon it by chance while trying to make something interesting.
 
 Lagso stands for learning and growing synthetic organisms, but really it was just a cool 5 letter domain I wanted to pick up before it got snatched.
+
